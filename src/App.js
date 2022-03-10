@@ -15,7 +15,7 @@ function App() {
       <h1 className = "title" onClick = {changeModal}>Showdle</h1>
       <Input />
       {/* <button onClick = {changeModal}> show modal</button> */}
-      <Modal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)}/>
+      <Modal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)} diff = {diff}/>
     </div>
   );
 }

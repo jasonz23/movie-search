@@ -25,5 +25,9 @@
 }
 
 .hint-n {
-    text-decoration-color: #fff;
+    color: #fff;
+}
+
+.hint-y {
+    color: black;
 }
