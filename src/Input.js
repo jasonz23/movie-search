@@ -29,7 +29,7 @@ class Input extends React.Component {
         value
       });
     
-      if (value.length > 0 ) {
+      if (value.length > 2 ) {
         // make delayed api call
         this.timeout = setTimeout(() => {
           const predictions = this.getPredictions(value);
@@ -45,9 +45,6 @@ class Input extends React.Component {
     }
 
     render() {
-        const giveAnswer = () => {
-            
-        }
         return ( 
           <div>
           <input type = "text" value={this.state.value} onChange = {this.onChange} className = "input"/>
@@ -55,7 +52,8 @@ class Input extends React.Component {
             {
               this.state.predictions.slice(0,5).map((item, index) => (
                 <div key={index + item} className = "options">{item}
-                <button className = "inputButton" onClick = {giveAnswer}>Enter</button></div>
+                <button className = "inputButton" >Enter</button></div>
+
                 
               ))
             }
@@ -69,4 +67,4 @@ class Input extends React.Component {
 
 }
 
-export default Input
+export default Input 
