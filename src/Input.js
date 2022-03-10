@@ -1,6 +1,6 @@
 import React from "react"
 import Movies from "./movies.json"
-const INPUT_TIMEOUT = 0;
+const INPUT_TIMEOUT = 250;
 class Input extends React.Component {
     constructor(props) {
         super(props);
@@ -13,16 +13,11 @@ class Input extends React.Component {
 
     getPredictions(value) {
 
-        return [
-        'Boston',
-        'Los Angeles',
-        'San Diego',
-        'San Franciso',
-        'Sacramento',
-        'New York',
-        'New Jersie',
-        'Chicago',
-      ].filter(item => item.toLowerCase().indexOf(value.toLowerCase()) !== -1);
+        return Movies.movies.map((item) => {
+            return (
+                item.title
+            )
+        }).filter(item => item.toLowerCase().indexOf(value.toLowerCase()) !== -1);
     }
 
     onChange(e) {
@@ -32,8 +27,8 @@ class Input extends React.Component {
       this.setState({
         value
       });
-
-      if (value.length > 0) {
+    
+      if (value.length > 0 ) {
         // make delayed api call
         this.timeout = setTimeout(() => {
           const predictions = this.getPredictions(value);
@@ -63,7 +58,7 @@ class Input extends React.Component {
         )
     }
     
-    render() {
+    render2() {
         return (
             <div>
                 <input type = "text" value = {this.state.value} onChange = {this.onChange} />
