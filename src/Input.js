@@ -5,7 +5,7 @@ class Input extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: " ",
+            value: "",
             predictions: [],
         };
         this.onChange = this.onChange.bind(this);
@@ -26,25 +26,41 @@ class Input extends React.Component {
     }
 
     onChange(e) {
-        clearTimeout(this.timeout);
-        const value = e.target.value;
-        this.setState({
-            value
-        });
+      // clear timeout when input changes value
+      clearTimeout(this.timeout);
+      const value = e.target.value;
+      this.setState({
+        value
+      });
 
-        if (value.length > 0) {
-            this.timeout = setTimeout(() => {
-                const predictions = this.getPredictions(value);
-                this.setState({
-                    predictions
-                });
-            }, INPUT_TIMEOUT);
-        } else {
-            this.setState({
-                predictions: []
-            });
-        }
-        
+      if (value.length > 0) {
+        // make delayed api call
+        this.timeout = setTimeout(() => {
+          const predictions = this.getPredictions(value);
+          this.setState({
+            predictions
+          });
+        }, INPUT_TIMEOUT);
+      } else {
+        this.setState({
+          predictions: []
+        });
+      }
+    }
+
+    render() {
+        return ( 
+          <div >
+          <input type = "text" value={this.state.value} onChange = {this.onChange}/>
+            <div> 
+            {
+              this.state.predictions.map((item, index) => (
+                <div key={index + item}>{item}</div>
+              ))
+            } 
+            </div> 
+          </div>
+        )
     }
     
     render() {
