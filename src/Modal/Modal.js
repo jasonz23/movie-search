@@ -1,7 +1,7 @@
 import React from "react"
+import "./Modal.css"
 
-
-const Modal = props => {
+const Modal = (props) => {
     if (!props.show) {
         return null
     }
@@ -15,7 +15,7 @@ const Modal = props => {
                     contents
                 </div>
                 <div className = "modal-footer">
-                    <button className = "button"> close</button>
+                    <button onClick = {props.onClose} className = "button"> close</button>
                 </div>
             </div>
         </div>
