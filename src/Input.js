@@ -1,6 +1,7 @@
 import React from "react"
 import Movies from "./movies.json"
-const INPUT_TIMEOUT = 250;
+import "./App.css"
+const INPUT_TIMEOUT = 150;
 class Input extends React.Component {
     constructor(props) {
         super(props);
@@ -45,12 +46,12 @@ class Input extends React.Component {
 
     render() {
         return ( 
-          <div >
-          <input type = "text" value={this.state.value} onChange = {this.onChange}/>
+          <div>
+          <input type = "text" value={this.state.value} onChange = {this.onChange} className = "input"/>
             <div> 
             {
               this.state.predictions.slice(0,5).map((item, index) => (
-                <div key={index + item}>{item}
+                <div key={index + item} className = "options">{item}
                 <button>Enter</button></div>
                 
               ))

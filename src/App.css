@@ -39,4 +39,22 @@
 
 .title {
   cursor: pointer;
+  text-align: center;
 }
+
+.input {
+  text-align: left;
+  margin:auto;
+  display: block;
+
+}
+
+.options {
+  text-align: center;
+  margin:auto;
+  display: block;
+
+}
+
+
+

@@ -6,6 +6,7 @@ import Input from "./Input.js"
 
 function App() {
   const [showModal, setModal] = useState(true)
+  const [diff, setDiff] = useState(false)
   const changeModal = () => {
     setModal(!showModal)
   }
@@ -13,8 +14,8 @@ function App() {
     <div>
       <h1 className = "title" onClick = {changeModal}>Showdle</h1>
       <Input />
-      <button onClick = {changeModal}> show modal</button>
-      <Modal onClose = {() => setModal(false)} show = {showModal}/>
+      {/* <button onClick = {changeModal}> show modal</button> */}
+      <Modal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)}/>
     </div>
   );
 }
