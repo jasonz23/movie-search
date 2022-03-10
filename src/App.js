@@ -34,6 +34,7 @@ function App() {
     console.log(answer.genres)
     console.log(answer.director)
   })
+  
   return (
     <div>
       <h1 className = "title" onClick = {changeModal}>Show</h1>
