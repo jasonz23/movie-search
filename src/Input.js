@@ -1,6 +1,7 @@
 import React from "react"
 import Movies from "./movies.json"
 import "./App.css"
+
 const INPUT_TIMEOUT = 150;
 class Input extends React.Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class Input extends React.Component {
             predictions: [],
         };
         this.onChange = this.onChange.bind(this);
+        //console.log(props.answer)
     }
 
     getPredictions(value) {
@@ -29,7 +31,7 @@ class Input extends React.Component {
         value
       });
     
-      if (value.length > 2 ) {
+      if (value.length > 1 ) {
         // make delayed api call
         this.timeout = setTimeout(() => {
           const predictions = this.getPredictions(value);
@@ -52,8 +54,10 @@ class Input extends React.Component {
             {
               this.state.predictions.slice(0,5).map((item, index) => (
                 <div key={index + item} className = "options">{item}
-                <button className = "inputButton" >Enter</button></div>
+                <button className = "inputButton" onClick = {() => {
+                    this.props.giveAnswer(item);
 
+                }}>Enter</button></div> 
                 
               ))
             }

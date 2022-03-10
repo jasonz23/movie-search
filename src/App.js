@@ -1,7 +1,7 @@
 
 import './App.css';
 import Modal from "./Modal/Modal.js"
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import Input from "./Input.js"
 import Result from "./Result.js"
 
@@ -13,13 +13,17 @@ function App() {
   const changeModal = () => {
     setModal(!showModal)
   }
+
+  useEffect(() => {
+    console.log(answer)
+  })
   return (
     <div>
-      <h1 className = "title" onClick = {changeModal}>Showdle</h1>
-      <Input />
+      <h1 className = "title" onClick = {changeModal}>Show</h1>
+      <Input answer = {answer} giveAnswer = {(params) => setAnswer(params)}  />
       {/* <button onClick = {changeModal}> show modal</button> */}
       <Modal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)} diff = {diff}/>
-      <Result />
+      <Result answer = {answer} />
     </div>
   );
 }
