@@ -1,7 +1,9 @@
 import React from "react"
-
-const Result = () => {
+import Movies from "./movies.json"
+const Result = (props) => {
     //let cow = "cow";
+
+
     return (
         <h2>Result</h2>
 

@@ -9,6 +9,7 @@ class Input extends React.Component {
         this.state = {
             value: "",
             predictions: [],
+
         };
         this.onChange = this.onChange.bind(this);
         //console.log(props.answer)
@@ -16,11 +17,7 @@ class Input extends React.Component {
 
     getPredictions(value) {
 
-        return Movies.movies.map((item) => {
-            return (
-                item.title
-            )
-        }).filter(item => item.toLowerCase().indexOf(value.toLowerCase()) !== -1);
+        return Movies.movies.filter(item => item.title.toLowerCase().indexOf(value.toLowerCase()) !== -1);
     }
 
     onChange(e) {
@@ -53,9 +50,20 @@ class Input extends React.Component {
             <div> 
             {
               this.state.predictions.slice(0,5).map((item, index) => (
-                <div key={index + item} className = "options">{item}
+                <div key={index + item} className = "options">{item.title}
                 <button className = "inputButton" onClick = {() => {
-                    this.props.giveAnswer(item);
+                    this.props.giveAnswer({
+                        id: item.id,
+                        title: item.title,
+                        year: item.year,
+                        runtime: item.runtime,
+                        genres: item.genres,
+                        director: item.director,
+                        actors: item.director,
+                        plot: item.plot,
+                        posterUrl: item.posterUrl
+
+                    });
 
                 }}>Enter</button></div> 
                 
