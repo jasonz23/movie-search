@@ -49,33 +49,19 @@ class Input extends React.Component {
           <input type = "text" value={this.state.value} onChange = {this.onChange}/>
             <div> 
             {
-              this.state.predictions.map((item, index) => (
-                <div key={index + item}>{item}</div>
+              this.state.predictions.slice(0,5).map((item, index) => (
+                <div key={index + item}>{item}
+                <button>Enter</button></div>
+                
               ))
-            } 
+            }
+            
             </div> 
+            
           </div>
         )
     }
-    
-    render2() {
-        return (
-            <div>
-                <input type = "text" value = {this.state.value} onChange = {this.onChange} />
 
-                <div>
-            {
-                this.state.predictions.map((item,index) => (
-                    <div key = {index + item}>
-                        {item}
-                        </div>
-                ))
-            }
-                </div>
-            </div>
-
-        )
-    }
 
 }
 
