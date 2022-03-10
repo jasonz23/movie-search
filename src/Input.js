@@ -45,6 +45,9 @@ class Input extends React.Component {
     }
 
     render() {
+        const giveAnswer = () => {
+            
+        }
         return ( 
           <div>
           <input type = "text" value={this.state.value} onChange = {this.onChange} className = "input"/>
@@ -52,7 +55,7 @@ class Input extends React.Component {
             {
               this.state.predictions.slice(0,5).map((item, index) => (
                 <div key={index + item} className = "options">{item}
-                <button>Enter</button></div>
+                <button className = "inputButton" onClick = {giveAnswer}>Enter</button></div>
                 
               ))
             }
