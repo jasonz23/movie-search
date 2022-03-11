@@ -1,14 +1,24 @@
 import React from "react"
-import Movies from "./movies.json"
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import "bootstrap/dist/css/bootstrap.min.css"
+import Row from 'react-bootstrap/Row'
+
 const Result = (props) => {
     //let cow = "cow";
 
 
     return (
-        <div>
-            <h2>Result</h2>
-            <h3>Genre</h3>
-        </div>
+        <Container fluid = "md" xs = {2} lg={6}>
+            <Row>
+                <Col>{props.answer.title}</Col>
+            </Row>
+            <Row>
+                <Col>Genre</Col>
+                <Col>Actors</Col>
+                <Col>3 of 3</Col>
+            </Row>
+        </Container>
         
 
 

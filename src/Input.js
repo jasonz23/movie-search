@@ -1,6 +1,11 @@
 import React from "react"
 import Movies from "./movies.json"
 import "./App.css"
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import "bootstrap/dist/css/bootstrap.min.css"
+import Row from 'react-bootstrap/Row'
+import Button from "react-bootstrap/Button"
 
 const INPUT_TIMEOUT = 150;
 class Input extends React.Component {
@@ -47,11 +52,12 @@ class Input extends React.Component {
         return ( 
           <div>
           <input type = "text" value={this.state.value} onChange = {this.onChange} className = "input"/>
-            <div> 
+
             {
               this.state.predictions.slice(0,5).map((item, index) => (
-                <div key={index + item} className = "options">{item.title}
-                <button className = "inputButton" onClick = {() => {
+                <div>
+                  <h3 md={{ span: 100, offset: 0 }} key={index + item} className = "options">{item.title}</h3>
+                  <button size = "sm" className = "inputButton" onClick = {() => {
                     this.props.giveAnswer({
                         id: item.id,
                         title: item.title,
@@ -64,13 +70,11 @@ class Input extends React.Component {
                         posterUrl: item.posterUrl
 
                     });
+                    }}>Enter</button> 
+                </div>
+                ))
+            }           
 
-                }}>Enter</button></div> 
-                
-              ))
-            }
-            
-            </div> 
             
           </div>
         )

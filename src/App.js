@@ -1,13 +1,17 @@
-
 import './App.css';
 import Modal from "./Modal/Modal.js"
 import {useState, useEffect} from "react"
 import Input from "./Input.js"
 import Result from "./Result.js"
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
 function App() {
   const [showModal, setModal] = useState(true)
   const [diff, setDiff] = useState(false)
+  //solution
+  //counter
   const [answer, setAnswer] = useState({
     id: 1,
     title: "Beetlejuice",
@@ -34,7 +38,7 @@ function App() {
     console.log(answer.genres)
     console.log(answer.director)
   })
-  
+
   return (
     <div>
       <h1 className = "title" onClick = {changeModal}>Show</h1>
