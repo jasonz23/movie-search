@@ -3,6 +3,10 @@ import AboutModal from "./AboutModal/AboutModal.js"
 import {useState, useEffect} from "react"
 import Input from "./Input.js"
 import Result from "./Result.js"
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import "bootstrap/dist/css/bootstrap.min.css"
+import Row from 'react-bootstrap/Row'
 
 
 function App() {
@@ -11,15 +15,15 @@ function App() {
   //solution
   //counter
   const [answer, setAnswer] = useState({
-    id: 1,
-    title: "Beetlejuice",
-    year: "1988",
-    runtime: "92",
-    genres: ["Comedy", "Fantasy"],
-    director: "Tim Burton",
-    actors: "Alec Baldwin, Geena Davis, Annie McEnroe, Maurice Page",
-    plot: "A couple of recently deceased ghosts contract the services of a \"bio-exorcist\" in order to remove the obnoxious new owners of their house.",
-    posterUrl: "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUwODE3MDE0MV5BMl5BanBnXkFtZTgwNTk1MjI4MzE@._V1_SX300.jpg"
+    id: 0,
+    title: "",
+    year: "",
+    runtime: "",
+    genres: ["",],
+    director: "",
+    actors: "",
+    plot: "",
+    posterUrl: ""
 
 
   })
@@ -43,13 +47,24 @@ function App() {
   // })
 
   return (
-    <div>
-      <h1 className = "title" onClick = {changeModal}>Show</h1>
-      <Input answer = {answer} giveAnswer = {(params) => setAnswer(params)}  />
-      {/* <button onClick = {changeModal}> show modal</button> */}
-      <AboutModal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)} diff = {diff}/>
-      <Result answer = {answer} />
-    </div>
+    <Container>
+      <Row>
+        <AboutModal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)} diff = {diff}/>
+        <h1 className = "title" onClick = {changeModal}>Show</h1>
+
+        <Col>
+
+          <Result answer = {answer} />
+        </Col>
+        <Col>
+          <Input answer = {answer} giveAnswer = {(params) => setAnswer(params)}  />
+        </Col>
+
+      </Row>
+      
+      
+      
+    </Container>
   );
 }
 

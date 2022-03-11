@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import Row from 'react-bootstrap/Row'
 import Button from "react-bootstrap/Button"
 
+
 const INPUT_TIMEOUT = 150;
 class Input extends React.Component {
     constructor(props) {
@@ -50,14 +51,16 @@ class Input extends React.Component {
 
     render() {
         return ( 
-          <div>
+          <Container>
           <input type = "text" value={this.state.value} onChange = {this.onChange} className = "input"/>
 
+          
             {
               this.state.predictions.slice(0,5).map((item, index) => (
-                <div key={item.id + index}>
-                  <h3 md={{ span: 100, offset: 0 }}  className = "options">{item.title}</h3>
-                  <button size = "sm" className = "inputButton" onClick = {() => {
+                <Row key={item.id + index} >
+                  <div className='input-group' >
+                  <Col   className = "options">{item.title}</Col>
+                  <Button  size = "sm" className = "inputButton" onClick = {() => {
                     this.props.giveAnswer({
                         id: item.id,
                         title: item.title,
@@ -70,13 +73,13 @@ class Input extends React.Component {
                         posterUrl: item.posterUrl
 
                     });
-                    }}>Enter</button> 
-                </div>
+                    }}>Enter</Button> 
+                    </div>
+                </Row>
                 ))
             }           
-
             
-          </div>
+          </Container>
         )
     }
 

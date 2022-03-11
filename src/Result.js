@@ -11,13 +11,17 @@ const Result = (props) => {
     return (
         <Container fluid = "md" xs = {2} lg={6}>
             <Row>
-                <Col>{props.answer.title}</Col>
+               <Row>
+                <Col></Col>
+                <Col >Genre</Col>
+                <Col>Actors</Col>
+                <Col>Runtime</Col>
             </Row>
             <Row>
-                <Col>Genre</Col>
-                <Col>Actors</Col>
-                <Col>3 of 3</Col>
+                <Col>{props.answer.title}</Col>
+            </Row> 
             </Row>
+            
         </Container>
         //<h1>cow</h1>
 
