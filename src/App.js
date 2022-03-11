@@ -1,5 +1,5 @@
 import './App.css';
-import AboutModal from "./Modal/AboutModal.js"
+import AboutModal from "./AboutModal/AboutModal.js"
 import {useState, useEffect} from "react"
 import Input from "./Input.js"
 import Result from "./Result.js"
@@ -29,7 +29,8 @@ function App() {
   }
 
   useEffect(() => {
-        console.log(showModal)
+        //console.log(showModal)
+        console.log(diff)
     })
 
   // useEffect(() => {
