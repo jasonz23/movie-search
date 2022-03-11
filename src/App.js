@@ -1,5 +1,5 @@
 import './App.css';
-import AboutModal from "./AboutModal/AboutModal.js"
+import AboutModal from "./Modal/AboutModal.js"
 import {useState, useEffect} from "react"
 import Input from "./Input.js"
 import Result from "./Result.js"
@@ -47,17 +47,18 @@ function App() {
   // })
 
   return (
-    <Container>
-      <Row>
+    <Container md = {200}>
+      <Row >
         <AboutModal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)} diff = {diff}/>
-        <h1 className = "title" onClick = {changeModal}>Show</h1>
+        <h1 className = "title" onClick = {changeModal}>Showdle</h1>
 
-        <Col>
-
-          <Result answer = {answer} />
-        </Col>
         <Col>
           <Input answer = {answer} giveAnswer = {(params) => setAnswer(params)}  />
+          
+        </Col>
+        <Col>
+          
+          <Result answer = {answer} />
         </Col>
 
       </Row>

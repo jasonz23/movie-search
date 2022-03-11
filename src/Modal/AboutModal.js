@@ -21,6 +21,8 @@ const AboutModal = (props) => {
 
             <Modal.Body onClick = {handleClose}>
                 <p>stuff about the game</p>
+                <p>more stuff</p>
+                <p>More stuff</p>
             </Modal.Body>
 
             <Modal.Body>
@@ -28,6 +30,9 @@ const AboutModal = (props) => {
                 <Button variant = "primary" className="btn margin-right" onClick = {setDiff}>
                     Hint?
                 </Button>
+                <p>
+                    {}
+                </p>
                 <p className = {props.diff? "hint-y":"hint-n"}>
                     The Hint
                 </p>
