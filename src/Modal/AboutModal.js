@@ -1,8 +1,8 @@
 import React from "react"
-import "./Modal.css"
+import Modal from 'react-bootstrap/Modal'
 
 
-const Modal = (props) => {
+const AboutModal = (props) => {
     if (!props.show) {
         return null
     }
@@ -10,7 +10,7 @@ const Modal = (props) => {
     
 
     return (
-        <div className = "modal">
+        <Modal show = {props.show}>
             <div className = "modal-content">
                 <div className = "modal-header">
                     <h4 className = "modal-title"> Show </h4>
@@ -29,9 +29,9 @@ const Modal = (props) => {
                 </div>
 
             </div>
-        </div>
+        </Modal>
     
     )
 }
 
-export default Modal;
+export default AboutModal;
