@@ -53,7 +53,7 @@ function App() {
     <Container  >
       <Row >
         <AboutModal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)} diff = {diff}/>
-        <h1 className = "title" onClick = {changeModal}>Showdle</h1>
+        <h1 className = "title" onClick = {changeModal}>Movie Search</h1>
 
         <Col>
           <Input answer = {answer} giveAnswer = {(params) => setAnswer(params)}  />

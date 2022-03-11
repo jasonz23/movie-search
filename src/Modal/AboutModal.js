@@ -15,26 +15,26 @@ const AboutModal = (props) => {
         <Modal show = {props.show} >
             <Modal.Header closeButton onClick = {handleClose}>
                 <Modal.Title>
-                    Showdle
+                    Movie Search
                 </Modal.Title>
             </Modal.Header>
 
             <Modal.Body onClick = {handleClose}>
-                <p>stuff about the game</p>
-                <p>more stuff</p>
-                <p>More stuff</p>
+                <p>This application is a very bare bones search program</p>
+                <p>Enter a movie name into the input and click enter on the desired movie</p>
+                <p>The movie infomation will then be shown on the right side</p>
             </Modal.Body>
 
             <Modal.Body>
 
                 <Button variant = "primary" className="btn margin-right" onClick = {setDiff}>
-                    Hint?
+                    Click Me
                 </Button>
                 <p>
                     {}
                 </p>
                 <p className = {props.diff? "hint-y":"hint-n"}>
-                    The Hint
+                    Made by Jason
                 </p>
 
                 
