@@ -19,7 +19,7 @@ function App() {
     title: "",
     year: "",
     runtime: "",
-    genres: ["",],
+    genres: [],
     director: "",
     actors: "",
     plot: "",
@@ -46,8 +46,11 @@ function App() {
   //   console.log(answer.director)
   // })
 
+
   return (
-    <Container md = {200}>
+
+  <div className = "main" >
+    <Container  >
       <Row >
         <AboutModal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)} diff = {diff}/>
         <h1 className = "title" onClick = {changeModal}>Showdle</h1>
@@ -62,10 +65,14 @@ function App() {
         </Col>
 
       </Row>
+
       
       
       
     </Container>
+    </div>
+   
+ 
   );
 }
 

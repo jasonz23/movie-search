@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container'
 import "bootstrap/dist/css/bootstrap.min.css"
 import Row from 'react-bootstrap/Row'
 import Table from 'react-bootstrap/Table'
+;
 
 
 const Result = (props) => {
@@ -13,9 +14,10 @@ const Result = (props) => {
     return (
         <Container fluid = "md" xs = {2} lg={6}>
 
-            <Table striped bordered hover>
+            <Table>
                 <thead>
-                    <tr>
+                    <tr className ="table-info">
+                        <th>Title</th>
                         <th>Genre</th>
                         <th>Director</th>
                         <th>Runtime </th>
@@ -24,10 +26,15 @@ const Result = (props) => {
                     </thead>
                     <tbody>
                         <tr>
-                        <td >{props.answer.genre}</td>
-                        <td>{props.answer.director}</td>
-                        <td>{props.answer.runtime}</td>
-                        <td>{props.answer.year}</td>
+                            <td>{props.answer.title}</td>
+                            <td >{props.answer.genres?.map((item) => {
+                                return (
+                                    item + ", "
+                                );
+                            })}</td>
+                            <td>{props.answer.director}</td>
+                            <td>{props.answer.runtime}</td>
+                            <td>{props.answer.year}</td>
 
                     </tr>
                 </tbody>

@@ -5,7 +5,8 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import "bootstrap/dist/css/bootstrap.min.css"
 import Row from 'react-bootstrap/Row'
-import Button from "react-bootstrap/Button"
+import InputGroup from 'react-bootstrap/InputGroup'
+import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 
 
 const INPUT_TIMEOUT = 150;
@@ -50,16 +51,24 @@ class Input extends React.Component {
     }
 
     render() {
-        return ( 
-          <Container>
-          <input type = "text" value={this.state.value} onChange = {this.onChange} className = "input"/>
+        return (
 
+          <Container>
+          
+            <InputGroup className="mb-3" value={this.state.value} onChange = {this.onChange}>
+              <FormControl
+                placeholder="Movie"
+                aria-label="Movie"
+                aria-describedby="basic-addon1"
+              />
+            </InputGroup>
           
             {
               this.state.predictions.slice(0,5).map((item, index) => (
                 <Row key={item.id + index} >
                   <div className='input-group' >
-                  <Col   className = "options">{item.title}</Col>
+                    
+                  <Col   className = "options" >{item.title}</Col>
                   <Button  size = "sm" className = "inputButton" onClick = {() => {
                     this.props.giveAnswer({
                         id: item.id,
@@ -80,6 +89,7 @@ class Input extends React.Component {
             }           
             
           </Container>
+     
         )
     }
 
