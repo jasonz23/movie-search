@@ -1,8 +1,8 @@
 import React from "react"
-import Col from 'react-bootstrap/Col'
+
 import Container from 'react-bootstrap/Container'
 import "bootstrap/dist/css/bootstrap.min.css"
-import Row from 'react-bootstrap/Row'
+
 import Table from 'react-bootstrap/Table'
 ;
 
