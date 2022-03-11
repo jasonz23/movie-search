@@ -3,9 +3,7 @@ import Modal from "./Modal/Modal.js"
 import {useState, useEffect} from "react"
 import Input from "./Input.js"
 import Result from "./Result.js"
-import Col from 'react-bootstrap/Col'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
+
 
 function App() {
   const [showModal, setModal] = useState(true)
@@ -31,13 +29,17 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(answer.id)
-    console.log(answer.title)
-    console.log(answer.year)
-    console.log(answer.runtime)
-    console.log(answer.genres)
-    console.log(answer.director)
-  })
+        console.log(showModal)
+    })
+
+  // useEffect(() => {
+  //   console.log(answer.id)
+  //   console.log(answer.title)
+  //   console.log(answer.year)
+  //   console.log(answer.runtime)
+  //   console.log(answer.genres)
+  //   console.log(answer.director)
+  // })
 
   return (
     <div>

@@ -19,6 +19,9 @@ const Result = (props) => {
                 <Col>3 of 3</Col>
             </Row>
         </Container>
+        //<h1>cow</h1>
+
+
         
 
 

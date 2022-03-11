@@ -55,8 +55,8 @@ class Input extends React.Component {
 
             {
               this.state.predictions.slice(0,5).map((item, index) => (
-                <div>
-                  <h3 md={{ span: 100, offset: 0 }} key={index + item} className = "options">{item.title}</h3>
+                <div key={item.id + index}>
+                  <h3 md={{ span: 100, offset: 0 }}  className = "options">{item.title}</h3>
                   <button size = "sm" className = "inputButton" onClick = {() => {
                     this.props.giveAnswer({
                         id: item.id,
