@@ -56,6 +56,7 @@
   margin:auto;
   display: block;
 
+
 }
 
 .inputButton {
@@ -64,8 +65,8 @@
 }
 
 .input-group {
-  color:whitesmoke;
-  background-color: rgb(145, 145, 226);
+  color:rgb(20, 12, 41);
+  background-color: rgb(241, 229, 229);
   border: #282c34;
   border-width: 1px;
   border-style: solid;

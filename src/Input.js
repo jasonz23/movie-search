@@ -58,7 +58,8 @@ class Input extends React.Component {
         return (
           
           <Container>
-            <div className = "group" >
+            <Row>
+              
             <InputGroup  value={this.state.value} onChange = {this.onChange}>
               <FormControl
                 placeholder="Movie"
@@ -66,7 +67,7 @@ class Input extends React.Component {
                 aria-describedby="basic-addon1"
               />
             </InputGroup>
-            </div>
+
             <div className="group">          
             {
               this.state.predictions.slice(0,5).map((item, index) => (
@@ -89,7 +90,7 @@ class Input extends React.Component {
                 ))
             }
             </div>           
-            
+            </Row>
           </Container>
      
         )
