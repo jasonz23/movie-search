@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import "bootstrap/dist/css/bootstrap.min.css"
 import Row from 'react-bootstrap/Row'
+import {isMobile} from 'react-device-detect';
 
 
 function App() {
@@ -43,10 +44,24 @@ function App() {
         <AboutModal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)} diff = {diff}/>
         <h1 className = "title" onClick = {changeModal}>Movie Search</h1>
 
-        <Col className = "col-xl-6 col-sm-12" >
+        <Col className = {() => {
+          if (isMobile) {
+            return "col-xl-6 col-sm-12"
+          } else {
+            return "col-xl"
+          }
+        }
+        } >
           <Input answer = {answer} giveAnswer = {(params) => setAnswer(params)}  />
         </Col>
-        <Col className = "col-xl-6 col-sm-12">
+        <Col className = {() => {
+          if (isMobile) {
+            return "col-xl-6 col-sm-12"
+          } else {
+            return "col-xl"
+          }
+        }
+        }>
           
           
           <Result answer = {answer} />

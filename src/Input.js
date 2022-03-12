@@ -10,6 +10,7 @@ import { Button, FormControl } from "react-bootstrap";
 
 
 
+
 const INPUT_TIMEOUT = 150;
 class Input extends React.Component {
     constructor(props) {
@@ -73,7 +74,7 @@ class Input extends React.Component {
                     
                   <Col   className = "options" >{item.Title}</Col>
                   <Button  size = "sm" className = "inputButton" onClick = {() => {
-                    
+
                     this.props.giveAnswer(newArr.concat({
                         id: item.Position,
                         title: item.Title,
