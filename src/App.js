@@ -73,8 +73,11 @@ function App() {
         </Row> */}
         <Row>
           <Col> 
-          <Input answer = {answer} giveAnswer = {(params) => setAnswer(params)}  />
-            <Result answer = {answer} />
+            <Input answer = {answer} giveAnswer = {(params) => setAnswer(params)}  />
+            <div className = "result">
+              <Result answer = {answer}/>
+            </div>
+            
           </Col>
         </Row>
 
