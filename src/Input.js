@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container'
 import "bootstrap/dist/css/bootstrap.min.css"
 import Row from 'react-bootstrap/Row'
 import InputGroup from 'react-bootstrap/InputGroup'
-import { Button, FormControl } from "react-bootstrap";
+import { FormControl } from "react-bootstrap";
 
 
 
@@ -73,9 +73,7 @@ class Input extends React.Component {
                 <Row key={item.Position + index} >
                   <div className='input-group' >
                     
-                  <Col   className = "options" >{item.Title}</Col>
-                  <Button  size = "sm" className = "inputButton" onClick = {() => {
-
+                  <Col   className = "options" onClick = {() => {
                     this.props.giveAnswer(newArr.concat({
                         id: item.Position,
                         title: item.Title,
@@ -85,7 +83,7 @@ class Input extends React.Component {
                         genres: item.Genres,
 
                     }));
-                    }}>Enter</Button> 
+                  }}>{item.Title}</Col> 
                     </div>
                 </Row>
                 ))
