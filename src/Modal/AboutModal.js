@@ -12,7 +12,8 @@ const AboutModal = (props) => {
         props.setDifficulty(true)
     }
     return (
-        <Modal show = {props.show} >
+        <div>
+        <Modal show = {props.show} keyboard  = {true} className = "md-12" size = "sm">
             <Modal.Header closeButton onClick = {handleClose}>
                 <Modal.Title>
                     Movie Search
@@ -43,6 +44,7 @@ const AboutModal = (props) => {
             
 
         </Modal>
+        </div>
     
     )
 }
