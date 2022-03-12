@@ -56,17 +56,18 @@ class Input extends React.Component {
       var newArr = this.props.answer;
 
         return (
-
-          <Container>
           
-            <InputGroup className="mb-3" value={this.state.value} onChange = {this.onChange}>
+          <Container>
+            <div className = "group" >
+            <InputGroup  value={this.state.value} onChange = {this.onChange}>
               <FormControl
                 placeholder="Movie"
                 aria-label="Movie"
                 aria-describedby="basic-addon1"
               />
             </InputGroup>
-          
+            </div>
+            <div className="group">          
             {
               this.state.predictions.slice(0,5).map((item, index) => (
                 <Row key={item.Position + index} >
@@ -88,7 +89,8 @@ class Input extends React.Component {
                     </div>
                 </Row>
                 ))
-            }           
+            }
+            </div>           
             
           </Container>
      

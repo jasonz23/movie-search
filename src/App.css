@@ -65,7 +65,7 @@
 
 .input-group {
   color:whitesmoke;
-  background-color: #61dafb;
+  background-color: rgb(145, 145, 226);
   border: #282c34;
   border-width: 1px;
   border-style: solid;
@@ -82,5 +82,13 @@ html, body {
   height: 100%;
 }
 
+.group {
+
+     vertical-align:bottom;
+     margin: 0;
+     width: auto;
+
+
+}
 
 
