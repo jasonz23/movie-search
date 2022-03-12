@@ -44,18 +44,45 @@ const Result = (props) => {
         }
         ];
 
+    const conditionalRowStyles = [
+        {
+            when: row => row.toggleSelected,
+            style: {
+            backgroundColor: "green",
+            userSelect: "none"
+            }
+        }
+    ];
 
+    const [data, setData] = React.useState(props.answer);
+
+    const handleRowClicked = row => {
+    const updatedData = data.map(item => {
+      if (row.id !== item.id) {
+        return item;
+      }
+
+      return {
+        ...item,
+        toggleSelected: !item.toggleSelected
+      };
+    });
+
+    setData(updatedData);
+  };
     return (
         <div> 
         <Container fluid = "md" xs = {2} lg={6}>
-            <DataTable
+            <DataTable 
                 title="Movies watch List"
                 highlightOnHover
                 selectableRows
-                defaultSortFieldId={1}
                 columns = {columns}
                 data = {props.answer}
-            />          
+                onRowClicked = {handleRowClicked}
+                conditionalRowStyles = {conditionalRowStyles}
+            />
+            <button>Remove</button>          
         </Container>
                     
         </div>
