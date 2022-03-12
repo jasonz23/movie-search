@@ -72,7 +72,7 @@ function App() {
           </Col>
         </Row> */}
         <Row>
-          <Col className = "col-xl-6 col-sm-12"> 
+          <Col> 
           <Input answer = {answer} giveAnswer = {(params) => setAnswer(params)}  />
             <Result answer = {answer} />
           </Col>
