@@ -84,7 +84,18 @@ class Input extends React.Component {
                         genres: item.Genres,
 
                     }));
-                  }}>{item.Title}</Col> 
+                  }}>{item.Title}</Col>
+                  <button className = "options-button" onClick = {() => {
+                    this.props.giveAnswer(newArr.concat({
+                        id: item.Position,
+                        title: item.Title,
+                        rating: item.IMDbRating,
+                        year: item.Year,
+                        runtime: item.Runtime,
+                        genres: item.Genres,
+
+                    }));
+                  }}>Add</button> 
                     </div>
                 </Row>
                 ))

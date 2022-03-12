@@ -99,3 +99,10 @@ html, body {
 }
 
 
+.options-button {
+  margin-right: 0px;
+  background-color: rgb(212, 192, 184);
+  border-radius: 4px;
+  border-width: 2px;
+  border-color: rgb(226, 173, 148);
+}
