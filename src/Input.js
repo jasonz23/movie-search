@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import Row from 'react-bootstrap/Row'
 import InputGroup from 'react-bootstrap/InputGroup'
 import { FormControl } from "react-bootstrap";
+import {isMobile} from "react-device-detect"
 
 
 
@@ -74,7 +75,7 @@ class Input extends React.Component {
                 <Row key={item.Position + index} >
                   <div className='input-group' >
                     
-                  <Col   className = "options" onClick = {() => {
+                  <Col   className = "options" onClick = {() => { if (isMobile) {
                     this.props.giveAnswer(newArr.concat({
                         id: item.Position,
                         title: item.Title,
@@ -84,6 +85,8 @@ class Input extends React.Component {
                         genres: item.Genres,
 
                     }));
+                  }
+                    
                   }}>{item.Title}</Col>
                   <button className = "options-button" onClick = {() => {
                     this.props.giveAnswer(newArr.concat({
