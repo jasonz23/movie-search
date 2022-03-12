@@ -54,8 +54,7 @@ const Result = (props) => {
             <DataTable 
                 title="Movies watch List"
                 highlightOnHover
-                selectableRows
-
+                // selectableRows
                 columns = {columns}
                 data = {props.answer}/>
 
