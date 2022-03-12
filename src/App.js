@@ -24,6 +24,7 @@ function App() {
   useEffect(() => {
         //console.log(showModal)
         console.log(diff)
+        console.log(isMobile);
     })
 
   // useEffect(() => {
@@ -36,6 +37,7 @@ function App() {
   // })
 
 
+
   return (
 
   <div className = "main" >
@@ -44,7 +46,7 @@ function App() {
         <AboutModal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)} diff = {diff}/>
         <h1 className = "title" onClick = {changeModal}>Movie Search</h1>
 
-        <Col className = {() => {
+        {/* <Col className = {() => {
           if (isMobile) {
             return "col-xl-6 col-sm-12"
           } else {
@@ -61,11 +63,24 @@ function App() {
             return "col-xl"
           }
         }
-        }>
-          
-          
-          <Result answer = {answer} />
-        </Col>
+        }> </Col>*/}
+        {/* <Row>
+          <Col className = "col-xl-6 col-sm-12"> 
+          <Input answer = {answer} giveAnswer = {(params) => setAnswer(params)}  /></Col>
+          <Col className = "col-xl-6 col-sm-12">
+            <Result answer = {answer} />
+          </Col>
+        </Row> */}
+        <Row>
+          <Col className = "col-xl-6 col-sm-12"> 
+          <Input answer = {answer} giveAnswer = {(params) => setAnswer(params)}  />
+            <Result answer = {answer} />
+          </Col>
+        </Row>
+
+    
+
+        
 
       </Row>
 
