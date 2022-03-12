@@ -3,7 +3,6 @@ import React from "react"
 import Container from 'react-bootstrap/Container'
 import "bootstrap/dist/css/bootstrap.min.css"
 
-import {useState,useEffect} from "react"
 import DataTable from 'react-data-table-component';
 
  
@@ -11,11 +10,6 @@ import DataTable from 'react-data-table-component';
 
 const Result = (props) => {
     //let cow = "cow";
-    const [selectedRows, setSelectedRows] = useState([]);
-    useEffect(() => {
-        setSelectedRows(selectedRows)
-        console.log(selectedRows)
-    })
     const columns = [
         {
             id: 1,
