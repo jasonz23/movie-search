@@ -3,44 +3,62 @@ import React from "react"
 import Container from 'react-bootstrap/Container'
 import "bootstrap/dist/css/bootstrap.min.css"
 
-import Table from 'react-bootstrap/Table'
-;
+
+import DataTable from 'react-data-table-component';
+
+ 
 
 
 const Result = (props) => {
     //let cow = "cow";
+    const columns = [
+        {
+            id: 1,
+            name: "Title",
+            selector: (row) => row.title,
+            sortable: true,
+            reorder: true
+        },
+        {
+            id: 2,
+            name: "Genre",
+            selector: (row) => row.genres.replace('"' ,""),
+            sortable: true,
+            reorder: true
+        },
+        {
+            id: 3,
+            name: "Runtime (m)",
+            selector: (row) => row.runtime,
+            sortable: true,
+            right: true,
+            reorder: true
+        },
+        {
+            id: 4,
+            name: "Rating",
+            selector: (row) => row.rating,
+            sortable: true,
+            right: true,
+            reorder: true
+        }
+        ];
 
 
     return (
+        <div> 
         <Container fluid = "md" xs = {2} lg={6}>
-
-            <Table>
-                <thead>
-                    <tr className ="table-info">
-                        <th>Title</th>
-                        <th>Genre</th>
-                        <th>Director</th>
-                        <th>Runtime </th>
-                        <th>Year</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{props.answer.title}</td>
-                            <td >{props.answer.genres?.map((item) => {
-                                return (
-                                    item + ", "
-                                );
-                            })}</td>
-                            <td>{props.answer.director}</td>
-                            <td>{props.answer.runtime}</td>
-                            <td>{props.answer.year}</td>
-
-                    </tr>
-                </tbody>
-            </Table>
-            
+            <DataTable
+                title="Movies watch List"
+                highlightOnHover
+                selectableRows
+                defaultSortFieldId={1}
+                columns = {columns}
+                data = {props.answer}
+            />          
         </Container>
+                    
+        </div>
         //<h1>cow</h1>
 
 
