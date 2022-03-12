@@ -1,5 +1,5 @@
 import React from "react"
-import Movies from "./movies.json"
+import Movies from "./1001-moviess.json"
 import "./App.css"
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import Row from 'react-bootstrap/Row'
 import InputGroup from 'react-bootstrap/InputGroup'
 import { Button, FormControl } from "react-bootstrap";
+
 
 
 const INPUT_TIMEOUT = 150;
@@ -23,8 +24,7 @@ class Input extends React.Component {
     }
 
     getPredictions(value) {
-
-        return Movies.movies.filter(item => item.title.toLowerCase().indexOf(value.toLowerCase()) !== -1);
+      return Movies.filter(item => item.Title.toLowerCase().indexOf(value.toLowerCase()) !== -1);
     }
 
     onChange(e) {
@@ -50,7 +50,10 @@ class Input extends React.Component {
       }
     }
 
+
     render() {
+      var newArr = this.props.answer;
+
         return (
 
           <Container>
@@ -65,23 +68,21 @@ class Input extends React.Component {
           
             {
               this.state.predictions.slice(0,5).map((item, index) => (
-                <Row key={item.id + index} >
+                <Row key={item.Position + index} >
                   <div className='input-group' >
                     
-                  <Col   className = "options" >{item.title}</Col>
+                  <Col   className = "options" >{item.Title}</Col>
                   <Button  size = "sm" className = "inputButton" onClick = {() => {
-                    this.props.giveAnswer({
-                        id: item.id,
-                        title: item.title,
-                        year: item.year,
-                        runtime: item.runtime,
-                        genres: item.genres,
-                        director: item.director,
-                        actors: item.director,
-                        plot: item.plot,
-                        posterUrl: item.posterUrl
+                    
+                    this.props.giveAnswer(newArr.concat({
+                        id: item.Position,
+                        title: item.Title,
+                        rating: item.IMDbRating,
+                        year: item.Year,
+                        runtime: item.Runtime,
+                        genres: item.Genres,
 
-                    });
+                    }));
                     }}>Enter</Button> 
                     </div>
                 </Row>

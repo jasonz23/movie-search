@@ -14,19 +14,7 @@ function App() {
   const [diff, setDiff] = useState(false)
   //solution
   //counter
-  const [answer, setAnswer] = useState({
-    id: 0,
-    title: "",
-    year: "",
-    runtime: "",
-    genres: [],
-    director: "",
-    actors: "",
-    plot: "",
-    posterUrl: ""
-
-
-  })
+  const [answer, setAnswer] = useState([])
 
   const changeModal = () => {
     setModal(!showModal)
