@@ -53,7 +53,7 @@
 
 .options {
   text-align: left;
-  margin:auto;
+  margin:5px;
   display: block;
 
 
@@ -71,6 +71,7 @@
   border-width: 1px;
   border-style: solid;
   cursor: pointer;
+;
 }
 
 .main {
