@@ -75,7 +75,7 @@ function App() {
           <Col> 
             <Input answer = {answer} giveAnswer = {(params) => setAnswer(params)}  />
             <div className = "result">
-              <Result answer = {answer}/>
+              <Result answer = {answer} giveAnswer = {(params) => setAnswer(params)}/>
             </div>
             
           </Col>

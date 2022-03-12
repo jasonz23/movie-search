@@ -3,7 +3,7 @@ import React from "react"
 import Container from 'react-bootstrap/Container'
 import "bootstrap/dist/css/bootstrap.min.css"
 
-
+import {useState,useEffect} from "react"
 import DataTable from 'react-data-table-component';
 
  
@@ -11,6 +11,11 @@ import DataTable from 'react-data-table-component';
 
 const Result = (props) => {
     //let cow = "cow";
+    const [selectedRows, setSelectedRows] = useState([]);
+    useEffect(() => {
+        setSelectedRows(selectedRows)
+        console.log(selectedRows)
+    })
     const columns = [
         {
             id: 1,
@@ -43,33 +48,6 @@ const Result = (props) => {
             reorder: true
         }
         ];
-
-    const conditionalRowStyles = [
-        {
-            when: row => row.toggleSelected,
-            style: {
-            backgroundColor: "green",
-            userSelect: "none"
-            }
-        }
-    ];
-
-    const [data, setData] = React.useState(props.answer);
-
-    const handleRowClicked = row => {
-    const updatedData = data.map(item => {
-      if (row.id !== item.id) {
-        return item;
-      }
-
-      return {
-        ...item,
-        toggleSelected: !item.toggleSelected
-      };
-    });
-
-    setData(updatedData);
-  };
     return (
         <div> 
         <Container fluid = "md" xs = {2} lg={6}>
@@ -77,12 +55,17 @@ const Result = (props) => {
                 title="Movies watch List"
                 highlightOnHover
                 selectableRows
+
                 columns = {columns}
-                data = {props.answer}
-                onRowClicked = {handleRowClicked}
-                conditionalRowStyles = {conditionalRowStyles}
-            />
-            <button>Remove</button>          
+                data = {props.answer}/>
+
+            {/* <button onClick = {() => {
+                props.giveAnswer(selectedRows);
+            }}>Remove</button>  */}
+            <button onClick = {() => {
+                props.giveAnswer([]);
+            }}>Remove All</button> 
+                   
         </Container>
                     
         </div>
