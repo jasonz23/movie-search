@@ -46,8 +46,6 @@ function App() {
         <Col>
           <Input answer = {answer} giveAnswer = {(params) => setAnswer(params)}  />
           
-        </Col>
-        <Col>
           
           <Result answer = {answer} />
         </Col>
