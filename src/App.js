@@ -43,10 +43,11 @@ function App() {
         <AboutModal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)} diff = {diff}/>
         <h1 className = "title" onClick = {changeModal}>Movie Search</h1>
 
-        <Col className = "col-xl-6 col-sm-12">
+        <Col className = "col-xl-6 col-sm-12" >
           <Input answer = {answer} giveAnswer = {(params) => setAnswer(params)}  />
-        </Col >
+        </Col>
         <Col className = "col-xl-6 col-sm-12">
+          
           
           <Result answer = {answer} />
         </Col>

@@ -13,7 +13,7 @@ const AboutModal = (props) => {
     }
     return (
         <div>
-        <Modal show = {props.show} keyboard  = {true} className = "md-12" size = "sm">
+        <Modal show = {props.show} keyboard  = {true} fullscreen = "sm-down">
             <Modal.Header closeButton onClick = {handleClose}>
                 <Modal.Title>
                     Movie Search
