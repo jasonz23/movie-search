@@ -76,7 +76,8 @@ class Input extends React.Component {
                   <div className='input-group' >
                     
                   <Col   className = "options" onClick = {() => { if (isMobile) {
-                    this.props.giveAnswer(newArr.concat({
+                    if (!this.props.answer.some(a => item.Position === a.id)) {
+                      this.props.giveAnswer(newArr.concat({
                         id: item.Position,
                         title: item.Title,
                         rating: item.IMDbRating,
@@ -85,11 +86,13 @@ class Input extends React.Component {
                         genres: item.Genres,
 
                     }));
+                    };
                   }
                     
                   }}>{item.Title}</Col>
                   <button className = "options-button" onClick = {() => {
-                    this.props.giveAnswer(newArr.concat({
+                    if (!this.props.answer.some(a => item.Position === a.id)) {
+                      this.props.giveAnswer(newArr.concat({
                         id: item.Position,
                         title: item.Title,
                         rating: item.IMDbRating,
@@ -98,6 +101,8 @@ class Input extends React.Component {
                         genres: item.Genres,
 
                     }));
+                    }
+                    
                   }}>Add</button> 
                     </div>
                 </Row>
