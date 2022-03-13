@@ -34,5 +34,5 @@
 
 .modal-width {
 
-    width:80%
+    max-width: max-content;
 }
