@@ -12,7 +12,6 @@ const AboutModal = (props) => {
         props.setDifficulty(true)
     }
     return (
-        <div>
         <Modal show = {props.show} keyboard  = {true} fullscreen = "sm-down">
             <Modal.Header closeButton onClick = {handleClose}>
                 <Modal.Title>
@@ -44,8 +43,6 @@ const AboutModal = (props) => {
             
 
         </Modal>
-        </div>
-    
     )
 }
 
