@@ -12,7 +12,7 @@ const AboutModal = (props) => {
         props.setDifficulty(true)
     }
     return (
-        <Modal show = {props.show} keyboard  = {true} fullscreen = "sm-down">
+        <Modal show = {props.show} keyboard  = {true}>
             <Modal.Header closeButton onClick = {handleClose}>
                 <Modal.Title>
                     Movie Search
