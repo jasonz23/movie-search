@@ -39,11 +39,13 @@ function App() {
 
 
   return (
-
+    <div>
+      <AboutModal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)} diff = {diff}/>
   <div className = "main" >
+    
     <Container  >
       <Row >
-        <AboutModal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)} diff = {diff}/>
+        
         <h1 className = "title" onClick = {changeModal}>Movie Search</h1>
 
         {/* <Col className = {() => {
@@ -91,6 +93,7 @@ function App() {
       
       
     </Container>
+    </div>
     </div>
    
  
