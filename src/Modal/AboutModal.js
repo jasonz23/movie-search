@@ -1,5 +1,5 @@
 import React from "react"
-import Modal from 'react-bootstrap/Modal'
+import {Modal} from 'react-bootstrap'
 import Button from "react-bootstrap/Button"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./AboutModal.css"
