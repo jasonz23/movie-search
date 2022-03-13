@@ -106,3 +106,25 @@ html, body {
   border-width: 2px;
   border-color: rgb(226, 173, 148);
 }
+
+@media only screen and (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template: repeat(6, 1fr) / repeat(6, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    display: grid;
+    grid-template: repeat(6, 1fr) / repeat(6, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+    width: 40%;
+    height: 40%;
+  }
+}
