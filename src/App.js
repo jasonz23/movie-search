@@ -39,10 +39,9 @@ function App() {
 
 
   return (
-    <div>
-      <AboutModal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)} diff = {diff}/>
-  <div className = "main" >
     
+  <div className = "main" >
+    <AboutModal onClose = {() => setModal(false)} show = {showModal} setDifficulty = {() => setDiff(!diff)} diff = {diff}/>
     <Container  >
       <Row >
         
@@ -93,7 +92,6 @@ function App() {
       
       
     </Container>
-    </div>
     </div>
    
  
